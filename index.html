@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      height: 2cm;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    header nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    header nav ul li {
+      margin-right: 20px;
+      position: relative;
+    }
+    header nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f9f9f9;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    header nav ul li:hover ul {
+      display: block;
+    }
+    header nav ul li ul li {
+      padding: 10px;
+    }
+    #content {
+      display: flex;
+      margin-top: 1cm;
+    }
+    .sidebar {
+      width: 2cm;
+      background-color: #e0e0e0;
+      padding: 1cm 0;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 1cm;
+      padding: 10px;
+      background-color: #d0d0d0;
+    }
+    .main-content {
+      flex-grow: 1;
+      padding: 1cm;
+      background-color: #ffffff;
+    }
+    /* Login page styles */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .login-box {
+      padding: 2cm;
+      background-color: white;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .login-box input {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .login-box button {
+      padding: 10px;
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>
+          E Learning
+          <ul>
+            <li>
+              Elementary
+              <ul>
+                <li>Grade 1</li>
+                <li>Grade 2</li>
+                <li>Grade 3</li>
+                <li>Grade 4</li>
+                <li>Grade 5</li>
+                <li>Grade 6</li>
+              </ul>
+            </li>
+            <li>
+              Intermediate
+              <ul>
+                <li>Grade 1</li>
+                <li>Grade 2</li>
+                <li>Grade 3</li>
+              </ul>
+            </li>
+            <li>
+              Secondary
+              <ul>
+                <li>Grade 1</li>
+                <li>Grade 2</li>
+                <li>Grade 3</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Registration</li>
+        <li>Teachers Gateway</li>
+        <li>About Us</li>
+        <li>Vision and Mission</li>
+      </ul>
+    </nav>
+  </header>
+  <div id="content">
+    <div class="sidebar">
+      <ul>
+        <li>Section 1</li>
+        <li>Section 2</li>
+        <li>Section 3</li>
+        <li>Section 4</li>
+        <li>Section 5</li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <!-- Main content goes here -->
+    </div>
+    <div class="sidebar">
+      <ul>
+        <li>Section 1</li>
+        <li>Section 2</li>
+        <li>Section 3</li>
+        <li>Section 4</li>
+        <li>Section 5</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Login Page -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'password') {
+        window.location.href = 'members.html';
+      } else {
+        alert('Invalid login. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
+
+<!-- Members Page (members.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Members Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .members-list {
+      margin: 2cm;
+      padding: 1cm;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+    }
+    .members-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .members-list ul li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Members</h1>
+  <div class="members-list">
+    <ul>
+      <li>Ahmed Kamal</li>
+      <li>Salim Sami</li>
+    </ul>
+  </div>
+</body>
+</html>
